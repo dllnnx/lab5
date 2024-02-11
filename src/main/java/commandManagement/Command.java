@@ -34,6 +34,6 @@ public abstract class Command implements CommandInterface {
 
     @Override
     public String toString() {
-        return name + ": " + description;
+        return name + description;
     }
 }

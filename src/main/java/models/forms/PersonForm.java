@@ -31,6 +31,21 @@ public class PersonForm extends Form<Person>{
         );
     }
 
+    public Person build(long id) {
+        return new Person(
+                id,
+                askString("имя", s -> s != null && s.isEmpty()),
+                askCoordinates(),
+                ZonedDateTime.now(),
+                askInteger("рост", s -> s != null && s > 0),
+                askEyeColor(),
+                askHairColor(),
+                askCountry(),
+                askLocation()
+        );
+    }
+
+
     private Coordinates askCoordinates(){
         return new CoordinatesForm(console).build();
     }

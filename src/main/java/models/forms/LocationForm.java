@@ -18,4 +18,5 @@ public class LocationForm extends Form{
                 askString("название локации", s -> s != null && s.toString().length() <= 889)
         );
     }
+
 }

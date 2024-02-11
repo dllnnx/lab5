@@ -1,0 +1,39 @@
+package commandManagement.commands;
+
+import commandManagement.Command;
+import commandManagement.Console;
+import managers.CollectionManager;
+import models.Person;
+
+import java.util.ArrayList;
+
+public class FilterByHeight extends Command {
+    private final Console console;
+    private final CollectionManager collectionManager;
+
+    public FilterByHeight(Console console, CollectionManager collectionManager) {
+        super("filter_by_height", " height: вывести элементы, значение поля height которых равно заданному.");
+        this.console = console;
+        this.collectionManager = collectionManager;
+    }
+
+
+    @Override
+    public void execute(String[] args) {
+        try {
+            if (collectionManager.getCollectionSize() != 0) {
+                int height = Integer.parseInt(args[0]);
+                ArrayList<Person> people = collectionManager.getByHeight(height);
+                if (!people.isEmpty()) {
+                    console.println(people.toString());
+                } else {
+                    console.printError("Нет людей с таким ростом в коллекции!");
+                }
+            } else {
+                console.printError("Коллекция пуста!");
+            }
+        } catch (IllegalArgumentException e){
+            console.printError("Рост должен быть целочисленным!");
+        }
+    }
+}

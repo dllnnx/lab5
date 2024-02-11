@@ -12,13 +12,13 @@ public class Add extends Command {
     private Console console;
     private CollectionManager collectionManager;
     public Add(Console console, CollectionManager collectionManager){
-        super("add", "добавить новый элемент в коллекцию.");
+        super("add", " {element}: добавить новый элемент в коллекцию.");
         this.console = console;
         this.collectionManager = collectionManager;
     }
 
     @Override
-    public void execute() {
+    public void execute(String[] args) {
         console.println("Создание элемента Person...");
         collectionManager.addElement(new PersonForm(console).build());
         console.println("Объект Person создан успешно!");

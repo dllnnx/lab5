@@ -1,7 +1,9 @@
 package managers;
 
 import commandManagement.Printable;
+import exceptions.NoSuchIdException;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RuntimeManager {
@@ -18,12 +20,13 @@ public class RuntimeManager {
         while (true){
             if (!userScanner.hasNext()) throw new Exception(); // здесь будет эксепшн
             String userCommand = userScanner.nextLine().trim() + " ";
-            this.launch(userCommand.split(" ", 2));
+            this.launch(userCommand.split(" "));
         }
     }
 
-    public void launch(String[] userCommand){
+    public void launch(String[] userCommand) throws NoSuchIdException {
         if (userCommand[0].isEmpty()) return;
-        commandManager.execute(userCommand[0], userCommand[1]);
+        String[] args = Arrays.copyOfRange(userCommand, 1, userCommand.length);
+        commandManager.execute(userCommand[0], args);
     }
 }

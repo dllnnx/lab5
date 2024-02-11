@@ -1,6 +1,7 @@
 package managers;
 
 import commandManagement.Command;
+import exceptions.NoSuchIdException;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -24,10 +25,10 @@ public class CommandManager {
         return commands;
     }
 
-    public void execute(String name, String args){
+    public void execute(String name, String[] args) throws NoSuchIdException {
         Command command = commands.get(name);
         // if (command == null) выбросить ошибку
-        command.execute();
+        command.execute(args);
     }
 
 }

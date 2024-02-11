@@ -27,13 +27,37 @@ public class Person {
         this.location = location;
     }
 
+    public Person(long id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer height, EyeColor eyeColor, HairColor hairColor, Country nationality, Location location) {
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.height = height;
+        this.eyeColor = eyeColor;
+        this.hairColor = hairColor;
+        this.nationality = nationality;
+        this.location = location;
+    }
+
     private static long incNextId(){
         return nextId++;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
-        return "Person {" + ",\n" +
+        return "Person {" + "\n" +
                 "id = " + id + ",\n" +
                 "name = " + name + ",\n" +
                 "coordinates = " + coordinates + ",\n" +
