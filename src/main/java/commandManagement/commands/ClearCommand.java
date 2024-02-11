@@ -4,11 +4,11 @@ import commandManagement.Command;
 import commandManagement.Console;
 import managers.CollectionManager;
 
-public class Clear extends Command {
+public class ClearCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
-    public Clear(Console console, CollectionManager collectionManager) {
+    public ClearCommand(Console console, CollectionManager collectionManager) {
         super("clear", ": очистить коллекцию.");
         this.console = console;
         this.collectionManager = collectionManager;

@@ -4,14 +4,13 @@ import commandManagement.Command;
 import commandManagement.Console;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
-import models.Person;
 import models.forms.PersonForm;
 
-public class Update extends Command {
+public class UpdateCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
-    public Update(Console console, CollectionManager collectionManager) {
+    public UpdateCommand(Console console, CollectionManager collectionManager) {
         super("update", " id: обновить значение элемента коллекции, id которого равен заданному.");
         this.console = console;
         this.collectionManager = collectionManager;
@@ -19,7 +18,7 @@ public class Update extends Command {
 
 
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
+    public void execute(String[] args){
         try {
             if (args.length != 1) {
                 console.printError("Неверное количество аргументов!");

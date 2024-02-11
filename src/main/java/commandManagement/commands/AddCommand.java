@@ -2,16 +2,17 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import exceptions.IllegalAmountOfArguments;
 import managers.CollectionManager;
 import models.forms.PersonForm;
 
 /**
  * Команда add {element}: добавить новый элемент в коллекцию
  */
-public class Add extends Command {
-    private Console console;
-    private CollectionManager collectionManager;
-    public Add(Console console, CollectionManager collectionManager){
+public class AddCommand extends Command {
+    private final Console console;
+    private final CollectionManager collectionManager;
+    public AddCommand(Console console, CollectionManager collectionManager){
         super("add", " {element}: добавить новый элемент в коллекцию.");
         this.console = console;
         this.collectionManager = collectionManager;

@@ -4,11 +4,11 @@ import commandManagement.Command;
 import commandManagement.Console;
 import managers.CollectionManager;
 
-public class RemoveFirst extends Command {
+public class RemoveFirstCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
-    public RemoveFirst(Console console, CollectionManager collectionManager) {
+    public RemoveFirstCommand(Console console, CollectionManager collectionManager) {
         super("remove_first", ": удалить первый элемент из коллекции.");
         this.console = console;
         this.collectionManager = collectionManager;

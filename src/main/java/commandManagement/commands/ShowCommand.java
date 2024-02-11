@@ -7,11 +7,11 @@ import models.Person;
 
 import java.util.Collection;
 
-public class Show extends Command {
+public class ShowCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
-    public Show(Console console, CollectionManager collectionManager) {
+    public ShowCommand(Console console, CollectionManager collectionManager) {
         super("show", ": вывести в стандартный поток вывода все элементы коллекции в строковом представлении.");
         this.console = console;
         this.collectionManager = collectionManager;

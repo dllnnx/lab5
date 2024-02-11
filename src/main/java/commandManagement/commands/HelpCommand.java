@@ -4,10 +4,10 @@ import commandManagement.Command;
 import managers.CommandManager;
 import commandManagement.Console;
 
-public class Help extends Command {
-    private CommandManager commandManager;
-    private Console console;
-    public Help(Console console, CommandManager commandManager){
+public class HelpCommand extends Command {
+    private final CommandManager commandManager;
+    private final Console console;
+    public HelpCommand(Console console, CommandManager commandManager){
         super("help", ": вывести справку по доступным командам.");
         this.console = console;
         this.commandManager = commandManager;

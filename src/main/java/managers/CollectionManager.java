@@ -1,6 +1,8 @@
 package managers;
 
+import exceptions.IllegalAmountOfArguments;
 import exceptions.NoSuchIdException;
+import models.Country;
 import models.Person;
 
 import java.util.*;
@@ -32,7 +34,7 @@ public class CollectionManager {
         collection.add(person);
     }
 
-    public Person getById(long id) throws NoSuchIdException {
+    public Person getById(long id){
         for (Person person : collection) {
             if (person.getId() == id) {
                 return person;
@@ -41,7 +43,7 @@ public class CollectionManager {
         throw new NoSuchIdException();
     }
 
-    public void removeById(long id) throws NoSuchIdException{
+    public void removeById(long id){
         try {
             collection.remove(getById(id));
         } catch (NoSuchIdException e){
@@ -76,6 +78,23 @@ public class CollectionManager {
             }
         }
         return people;
+    }
+
+    public Person maxByNationality(){
+        int maxNat = collection.get(0).getNationality().getThousandsOfArea();
+        Person maxPerson = collection.get(0);
+        for (Person person: collection){
+            if (person.getNationality().getThousandsOfArea() > maxNat){
+                maxNat = person.getNationality().getThousandsOfArea();
+                maxPerson = person;
+            }
+        }
+        return maxPerson;
+    }
+
+    public void shuffle(String[] args){
+        if (!(args.length == 0)) throw new IllegalAmountOfArguments();
+        Collections.shuffle(collection);
     }
 
 }

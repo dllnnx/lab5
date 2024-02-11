@@ -55,6 +55,10 @@ public class Person {
         return name;
     }
 
+    public Country getNationality() {
+        return nationality;
+    }
+
     @Override
     public String toString() {
         return "Person {" + "\n" +

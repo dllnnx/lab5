@@ -7,11 +7,11 @@ import models.Person;
 
 import java.util.ArrayList;
 
-public class FilterByHeight extends Command {
+public class FilterByHeightCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
-    public FilterByHeight(Console console, CollectionManager collectionManager) {
+    public FilterByHeightCommand(Console console, CollectionManager collectionManager) {
         super("filter_by_height", " height: вывести элементы, значение поля height которых равно заданному.");
         this.console = console;
         this.collectionManager = collectionManager;

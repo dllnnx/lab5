@@ -15,16 +15,17 @@ public class RuntimeManager {
         this.commandManager = commandManager;
     }
 
-    public void interactiveMode() throws Exception {
+    public void interactiveMode(){
         Scanner userScanner = ScannerManager.getUserScanner();
         while (true){
-            if (!userScanner.hasNext()) throw new Exception(); // здесь будет эксепшн
+            //if (!userScanner.hasNext()) эксепшн
             String userCommand = userScanner.nextLine().trim() + " ";
             this.launch(userCommand.split(" "));
+            commandManager.addToHistory(userCommand.split(" ")[0]);
         }
     }
 
-    public void launch(String[] userCommand) throws NoSuchIdException {
+    public void launch(String[] userCommand){
         if (userCommand[0].isEmpty()) return;
         String[] args = Arrays.copyOfRange(userCommand, 1, userCommand.length);
         commandManager.execute(userCommand[0], args);

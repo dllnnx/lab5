@@ -5,18 +5,18 @@ import commandManagement.Console;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 
-public class RemoveById extends Command {
+public class RemoveByIdCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
-    public RemoveById(Console console, CollectionManager collectionManager) {
+    public RemoveByIdCommand(Console console, CollectionManager collectionManager) {
         super("remove_by_id", " id: удалить элемент из коллекции по его id");
         this.console = console;
         this.collectionManager = collectionManager;
     }
 
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
+    public void execute(String[] args) {
         try {
             if (args.length != 1) {
                 console.printError("Неверное количество аргументов!");

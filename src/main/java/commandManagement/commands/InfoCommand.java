@@ -5,11 +5,11 @@ import commandManagement.Console;
 import managers.CollectionManager;
 
 
-public class Info extends Command {
+public class InfoCommand extends Command {
     private final CollectionManager collectionManager;
     private final Console console;
 
-    public Info(Console console, CollectionManager collectionManager) {
+    public InfoCommand(Console console, CollectionManager collectionManager) {
         super("info", ": вывести в стандартный поток вывода информацию о коллекции");
         this.collectionManager = collectionManager;
         this.console = console;
