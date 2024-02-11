@@ -1,4 +1,4 @@
-package models;
+package objects;
 
 public class Coordinates {
     private float x; //Максимальное значение поля: 737

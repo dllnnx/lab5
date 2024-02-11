@@ -1,4 +1,4 @@
-package models;
+package objects;
 
 public enum HairColor {
     GREEN,

@@ -2,8 +2,7 @@ package managers;
 
 import exceptions.IllegalAmountOfArguments;
 import exceptions.NoSuchIdException;
-import models.Country;
-import models.Person;
+import objects.Person;
 
 import java.util.*;
 

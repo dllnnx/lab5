@@ -1,7 +1,7 @@
-package models.forms;
+package objects.forms;
 
 import commandManagement.Printable;
-import models.Coordinates;
+import objects.Coordinates;
 
 public class CoordinatesForm extends Form{
     public CoordinatesForm(Printable console) {

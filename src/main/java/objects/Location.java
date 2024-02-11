@@ -1,4 +1,4 @@
-package models;
+package objects;
 
 public class Location {
     private Float x; //Поле не может быть null

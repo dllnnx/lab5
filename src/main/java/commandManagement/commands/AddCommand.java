@@ -2,9 +2,8 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
-import exceptions.IllegalAmountOfArguments;
 import managers.CollectionManager;
-import models.forms.PersonForm;
+import objects.forms.PersonForm;
 
 /**
  * Команда add {element}: добавить новый элемент в коллекцию

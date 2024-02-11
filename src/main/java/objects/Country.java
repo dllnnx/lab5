@@ -1,4 +1,4 @@
-package models;
+package objects;
 
 public enum Country{
     RUSSIA(17000),

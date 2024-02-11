@@ -3,7 +3,7 @@ package commandManagement.commands;
 import commandManagement.Command;
 import commandManagement.Console;
 import managers.CollectionManager;
-import models.Person;
+import objects.Person;
 
 import java.util.ArrayList;
 

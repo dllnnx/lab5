@@ -4,7 +4,7 @@ import commandManagement.Command;
 import commandManagement.Console;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
-import models.forms.PersonForm;
+import objects.forms.PersonForm;
 
 public class UpdateCommand extends Command {
     private final Console console;

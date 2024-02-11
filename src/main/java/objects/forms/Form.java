@@ -1,4 +1,4 @@
-package models.forms;
+package objects.forms;
 
 import commandManagement.*;
 

@@ -1,7 +1,7 @@
-package models.forms;
+package objects.forms;
 
 import commandManagement.Printable;
-import models.Location;
+import objects.Location;
 
 import java.util.Objects;
 
