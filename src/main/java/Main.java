@@ -2,6 +2,7 @@ import commandManagement.commands.*;
 import managers.CollectionManager;
 import managers.CommandManager;
 import commandManagement.Console;
+import managers.FileManager;
 import managers.RuntimeManager;
 
 import java.util.List;
@@ -11,6 +12,7 @@ public class Main {
         Console console = new Console();
         CommandManager commandManager = new CommandManager();
         CollectionManager collectionManager = new CollectionManager();
+        FileManager fileManager = new FileManager(console,collectionManager);
 
         commandManager.addCommands(List.of(
                 new HelpCommand(console, commandManager),
@@ -26,7 +28,8 @@ public class Main {
                 new ExitCommand(console),
                 new MaxByNationalityCommand(console, collectionManager),
                 new ShuffleCommand(console, collectionManager),
-                new HistoryCommand(console, commandManager)
+                new HistoryCommand(console, commandManager),
+                new SaveCommand(fileManager)
         ));
         new RuntimeManager(console, commandManager).interactiveMode();
     }

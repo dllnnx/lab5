@@ -10,7 +10,7 @@ public abstract class Form<T> {
     private final UserInput scanner;
 
     public Form(Printable console) {
-        this.console = (Console.isFileMode()) ? new BlankConsole() : console;
+        this.console = (Console.isFileMode()) ? new FileConsole() : console;
         this.scanner = new ConsoleInput(); // добавить сканер с файлов
     }
 

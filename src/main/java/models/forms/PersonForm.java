@@ -12,7 +12,7 @@ public class PersonForm extends Form<Person>{
 
     public PersonForm(Printable console) {
         super(console);
-        this.console = (Console.isFileMode()) ? new BlankConsole() : console;
+        this.console = (Console.isFileMode()) ? new FileConsole() : console;
         this.scanner = new ConsoleInput(); // добавить сканер с файлов
     }
 

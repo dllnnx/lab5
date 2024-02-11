@@ -1,6 +1,6 @@
 package commandManagement;
 
-public class BlankConsole implements Printable{
+public class FileConsole implements Printable{
     @Override
     public void print(String s) {
 
