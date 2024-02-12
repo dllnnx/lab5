@@ -15,9 +15,6 @@ public abstract class Command implements CommandInterface {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
     @Override
     public boolean equals(Object o) {

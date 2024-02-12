@@ -29,7 +29,6 @@ public class CommandManager {
 
     public void execute(String name, String[] args){
         Command command = commands.get(name);
-        // if (command == null) выбросить ошибку
         command.execute(args);
     }
 

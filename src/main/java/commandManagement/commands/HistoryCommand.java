@@ -20,7 +20,7 @@ public class HistoryCommand extends Command {
     @Override
     public void execute(String[] args) throws NoSuchIdException {
         if (args.length != 0){
-            console.printError("Неверное количество аргументов!");
+            console.printError("Для этой команды не требуются аргументы!");
         } else{
             List<String> history = commandManager.getCommandHistory();
             if (!history.isEmpty()){

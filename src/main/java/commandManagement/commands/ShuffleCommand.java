@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import exceptions.IllegalAmountOfArguments;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
@@ -17,16 +18,16 @@ public class ShuffleCommand extends Command {
     }
 
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
-        try {
-            if (collectionManager.getCollectionSize() != 0) {
-                collectionManager.shuffle(args);
-                console.println("Коллекция успешно перемешана!");
-            } else {
-                console.printError("Коллекция пуста!");
-            }
-        } catch (IllegalAmountOfArguments e){
-            console.printError(e.toString());
+    public void execute(String[] args){
+        if (args.length != 0){
+            console.printError("Для этой команды не требуются аргументы!");
+        }
+        if (collectionManager.getCollectionSize() != 0) {
+            collectionManager.shuffle(args);
+            console.println(ConsoleColor.setConsoleColor(
+                    "Коллекция успешно перемешана!", ConsoleColor.GREEN));
+        } else {
+            console.printError("Коллекция пуста!");
         }
     }
 }

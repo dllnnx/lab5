@@ -14,7 +14,11 @@ public class HelpCommand extends Command {
     }
     @Override
     public void execute(String[] args) {
-        commandManager.getCommands().
-                forEach((commandName, command) -> console.println(command.toString()));
+        if (args.length != 0){
+            console.printError("Для этой команды не требуются аргументы!");
+        } else {
+            commandManager.getCommands().
+                    forEach((commandName, command) -> console.println(command.toString()));
+        }
     }
 }

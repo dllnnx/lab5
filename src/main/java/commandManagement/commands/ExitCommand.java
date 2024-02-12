@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import exceptions.NoSuchIdException;
 
 public class ExitCommand extends Command {
@@ -14,7 +15,7 @@ public class ExitCommand extends Command {
 
     @Override
     public void execute(String[] args) throws NoSuchIdException {
-        console.println("Программа завершена. До свидания!)))");
+        console.println(ConsoleColor.setConsoleColor("Программа завершена. До встречи!)))", ConsoleColor.PURPLE));
         System.exit(0);
     }
 }

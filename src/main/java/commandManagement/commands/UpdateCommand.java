@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 import objects.forms.PersonForm;
@@ -21,14 +22,17 @@ public class UpdateCommand extends Command {
     public void execute(String[] args){
         try {
             if (args.length != 1) {
-                console.printError("Неверное количество аргументов!");
+                console.printError("Неверное количество аргументов! Введено: " + args.length +
+                        ", ожидалось: 1.");
             } else if (collectionManager.getCollectionSize() != 0){
                 long id = Long.parseLong(args[0]);
                 if (collectionManager.getById(id) != null) {
-                    console.println("Обновление элемента Person, id = " + id + "...");
+                    console.println(ConsoleColor.setConsoleColor(
+                            "Обновление элемента Person, id = " + id + "...", ConsoleColor.CYAN));
                     collectionManager.removeById(id);
                     collectionManager.addElement(new PersonForm(console).build(id));
-                    console.println("Элемент Person с id = " + id + " обновлен успешно!");
+                    console.println(ConsoleColor.setConsoleColor(
+                            "Элемент Person с id = " + id + " обновлен успешно!", ConsoleColor.GREEN));
                 }
             } else if (collectionManager.getCollectionSize() == 0){
                 console.printError("Коллекция пуста!");

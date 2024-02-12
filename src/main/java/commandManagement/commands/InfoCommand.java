@@ -17,6 +17,9 @@ public class InfoCommand extends Command {
 
     @Override
     public void execute(String[] args) {
+        if (args.length != 0){
+            console.printError("Для этой команды не требуются аргументы!");
+        }
         console.println("Информация о коллекции: \n" +
                 "Тип коллекции: " + collectionManager.getCollectionType() + "\n" +
                 "Количество элементов: " + collectionManager.getCollectionSize() + "\n"  +

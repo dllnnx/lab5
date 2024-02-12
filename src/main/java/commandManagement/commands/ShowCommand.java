@@ -20,6 +20,9 @@ public class ShowCommand extends Command {
 
     @Override
     public void execute(String[] args) {
+        if (args.length != 0){
+            console.printError("Для этой команды не требуются аргументы!");
+        }
         Collection<Person> collection = collectionManager.getCollection();
         if (collection == null || collection.isEmpty()){
             console.printError("Коллекция пуста!");

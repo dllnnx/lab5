@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "name": "alena",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "creationDate": "2024-02-12T03:01:06.876090900+03:00[GMT+03:00]",
+    "height": 160,
+    "eyeColor": "GREEN",
+    "hairColor": "GREEN",
+    "nationality": "RUSSIA",
+    "location": {
+      "x": 606.0,
+      "y": 606.0,
+      "name": "bb6"
+    }
+  },
+  {
+    "id": 1,
+    "name": "belya",
+    "coordinates": {
+      "x": 2.0,
+      "y": 2.0
+    },
+    "creationDate": "2024-02-12T03:01:35.852569700+03:00[GMT+03:00]",
+    "height": 200,
+    "eyeColor": "WHITE",
+    "hairColor": "WHITE",
+    "nationality": "UNITED_KINGDOM",
+    "location": {
+      "x": 312.0,
+      "y": 312.0,
+      "name": "b6"
+    }
+  }
+]

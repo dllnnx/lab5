@@ -24,6 +24,6 @@ public class Console implements Printable{
 
     @Override
     public void printError(String s) {
-        System.out.println(s); // поменять цвет
+        System.out.println(ConsoleColor.setConsoleColor(s, ConsoleColor.RED));
     }
 }

@@ -5,7 +5,7 @@ public enum Country{
     UNITED_KINGDOM(243),
     ITALY(302);
 
-    private int thousandsOfArea;
+    private final int thousandsOfArea;
 
     Country(int thousandsOfArea) {
         this.thousandsOfArea = thousandsOfArea;

@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import managers.CollectionManager;
 
 public class RemoveFirstCommand extends Command {
@@ -18,7 +19,8 @@ public class RemoveFirstCommand extends Command {
     public void execute(String[] args) {
         if (collectionManager.getCollectionSize() != 0){
             collectionManager.removeFirst();
-            console.println("Первый элемент коллекции успешно удален!");
+            console.println(ConsoleColor.setConsoleColor(
+                    "Первый элемент коллекции успешно удален!", ConsoleColor.GREEN));
         } else{
             console.printError("Коллекция пуста!");
         }

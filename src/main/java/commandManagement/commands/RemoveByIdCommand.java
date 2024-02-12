@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 
@@ -19,12 +20,14 @@ public class RemoveByIdCommand extends Command {
     public void execute(String[] args) {
         try {
             if (args.length != 1) {
-                console.printError("Неверное количество аргументов!");
+                console.printError("Неверное количество аргументов! Введено: " + args.length +
+                        ", ожидалось: 1.");
             } else if (collectionManager.getCollectionSize() != 0) {
                 long id = Long.parseLong(args[0]);
                 if (collectionManager.getById(id) != null) {
                     collectionManager.removeById(id);
-                    console.println("Удаление элемента с id = " + id + " произошло успешно!");
+                    console.println(ConsoleColor.setConsoleColor(
+                            "Удаление элемента с id = " + id + " произошло успешно!", ConsoleColor.GREEN));
                 }
             } else if (collectionManager.getCollectionSize() == 0 ){
                 console.printError("Коллекция пуста!");

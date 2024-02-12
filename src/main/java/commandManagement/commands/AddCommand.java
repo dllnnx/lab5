@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import managers.CollectionManager;
 import objects.forms.PersonForm;
 
@@ -19,9 +20,9 @@ public class AddCommand extends Command {
 
     @Override
     public void execute(String[] args) {
-        console.println("Создание элемента Person...");
+        console.println(ConsoleColor.setConsoleColor("Создание элемента Person...", ConsoleColor.CYAN));
         collectionManager.addElement(new PersonForm(console).build());
-        console.println("Объект Person создан успешно!");
+        console.println(ConsoleColor.setConsoleColor("Объект Person создан успешно!", ConsoleColor.GREEN));
         // добавить обработку ошибок
     }
 }

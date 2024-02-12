@@ -2,6 +2,7 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
+import commandManagement.ConsoleColor;
 import managers.CollectionManager;
 
 public class ClearCommand extends Command {
@@ -18,7 +19,7 @@ public class ClearCommand extends Command {
     public void execute(String[] args) {
         if (collectionManager.getCollectionSize() != 0) {
             collectionManager.clearCollection();
-            console.println("Коллекция успешно очищена!");
+            console.println(ConsoleColor.setConsoleColor("Коллекция успешно очищена!", ConsoleColor.GREEN));
         } else {
             console.printError("Коллекция уже пуста!");
         }
