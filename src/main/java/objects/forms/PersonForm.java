@@ -20,10 +20,11 @@ public class PersonForm extends Form<Person>{
     @Override
     public Person build() {
         return new Person(
-                askString("имя", s -> s != null && s.isEmpty()),
+                askString("имя", s -> s != null && !s.isBlank(),
+                        " Имя не может быть пустым(("),
                 askCoordinates(),
                 ZonedDateTime.now(),
-                askInteger("рост", s -> s != null && s > 0),
+                askInteger("рост", s -> s != null && s > 0, " Минимальное значение поля: 1."),
                 askEyeColor(),
                 askHairColor(),
                 askCountry(),
@@ -34,10 +35,11 @@ public class PersonForm extends Form<Person>{
     public Person build(long id) {
         return new Person(
                 id,
-                askString("имя", s -> s != null && s.isEmpty()),
+                askString("имя", s -> s != null && !s.isBlank(),
+                        " Имя не может быть пустым(("),
                 askCoordinates(),
                 ZonedDateTime.now(),
-                askInteger("рост", s -> s != null && s > 0),
+                askInteger("рост", s -> s != null && s > 0, " Минимальное значение поля: 1."),
                 askEyeColor(),
                 askHairColor(),
                 askCountry(),

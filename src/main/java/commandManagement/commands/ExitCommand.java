@@ -14,7 +14,7 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
+    public void execute(String[] args){
         console.println(ConsoleColor.setConsoleColor("Программа завершена. До встречи!)))", ConsoleColor.PURPLE));
         System.exit(0);
     }

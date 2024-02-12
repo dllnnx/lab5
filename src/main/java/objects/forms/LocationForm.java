@@ -13,9 +13,10 @@ public class LocationForm extends Form{
     @Override
     public Location build() {
         return new Location(
-                askFloat("координата X", Objects::nonNull),
-                askFloat("координата Y", Objects::nonNull),
-                askString("название локации", s -> s != null && s.toString().length() <= 889)
+                askFloat("координата X", Objects::nonNull, ""),
+                askFloat("координата Y", Objects::nonNull, ""),
+                askString("название локации", s -> s != null && s.toString().length() <= 889,
+                        " Длина строки не может быть больше 889((")
         );
     }
 

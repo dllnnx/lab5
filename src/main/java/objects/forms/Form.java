@@ -16,12 +16,16 @@ public abstract class Form<T> {
 
     public abstract T build();
 
-    public String askString(String type, Predicate<String> validator){
+    public String askString(String type, Predicate<String> validator, String errMessage){
         while (true) {
-            console.println("Введите " + type + ": ");
-            String input = scanner.nextLine().trim();
-            // добавить трай кэтч на инвалид форм
-            return input;
+            try {
+                console.println("Введите " + type + ": ");
+                String input = scanner.nextLine().trim();
+                if (!validator.test(input)) throw new IllegalArgumentException();
+                return input;
+            } catch (IllegalArgumentException e){
+                console.printError(type + " должно быть типа String!" + errMessage);
+            }
         }
     }
 
@@ -47,21 +51,21 @@ public abstract class Form<T> {
         }
     }
 
-    public Integer askInteger(String type, Predicate<Integer> validator) {
+    public Integer askInteger(String type, Predicate<Integer> validator, String errMessage) {
         while (true) {
             console.println("Введите " + type + ": ");
             String input = scanner.nextLine().trim();
             try {
                 Integer num = Integer.parseInt(input);
-                if (!validator.test(num)) throw new IllegalArgumentException(); // дописать инвалид форм
+                if (!validator.test(num)) throw new IllegalArgumentException();
                 return num;
-            } catch (NumberFormatException e) {
-                console.printError(type + " должно быть числом типа Integer!");
-            } // дописать инвалид форм
+            } catch (IllegalArgumentException e) {
+                console.printError(type + " должно быть числом типа Integer!" + errMessage);
+            }
         }
     }
 
-    public Float askFloat(String type, Predicate<Float> validator) {
+    public Float askFloat(String type, Predicate<Float> validator, String errMessage) {
         while (true) {
             console.println("Введите " + type + ": ");
             String input = scanner.nextLine().trim();
@@ -69,23 +73,23 @@ public abstract class Form<T> {
                 Float num = Float.parseFloat(input);
                 if (!validator.test(num)) throw new IllegalArgumentException(); // дописать инвалид форм
                 return num;
-            } catch (NumberFormatException e) {
-                console.printError(type + " должно быть числом типа Float!");
-            } // дописать инвалид форм
+            } catch (IllegalArgumentException e) {
+                console.printError(type + " должна быть числом типа Float!" + errMessage);
+            }
         }
     }
 
-    public Double askDouble(String type, Predicate<Double> validator) {
+    public Double askDouble(String type, Predicate<Double> validator, String errMessage) {
         while (true) {
             console.println("Введите " + type + ": ");
             String input = scanner.nextLine().trim();
             try {
                 Double num = Double.parseDouble(input);
-                if (!validator.test(num)) throw new IllegalArgumentException(); // дописать инвалид форм
+                if (!validator.test(num)) throw new IllegalArgumentException();
                 return num;
-            } catch (NumberFormatException e) {
-                console.printError(type + " должно быть числом типа Float!");
-            } // дописать инвалид форм
+            } catch (IllegalArgumentException e) {
+                console.printError(type + " должна быть числом типа Float!" + errMessage);
+            }
         }
     }
 
