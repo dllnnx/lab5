@@ -11,9 +11,11 @@ public class CoordinatesForm extends Form{
     @Override
     public Coordinates build() {
         return new Coordinates(
-                askFloat("координата X", s -> s != null && (float) s <= 737,
+                askFloat("координата X", ". Значение поля не должно превышать 737",
+                        s -> s != null && (float) s <= 737,
                         " Максимально допустимое значение поля: 737."),
-                askDouble("координата Y", s -> s!= null && (double) s <= 113,
+                askDouble("координата Y", ". Значение поля не должно превышать 113",
+                        s -> s!= null && (double) s <= 113,
                         " Максимально допустимое значение поля: 113.")
         );
     }

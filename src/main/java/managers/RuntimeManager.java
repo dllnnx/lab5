@@ -27,8 +27,7 @@ public class RuntimeManager {
             } catch (NoSuchElementException e){
                 console.printError("Ой, кажется, Вы ввели что-то не то... До свидания!");
                 System.exit(0);
-            } catch (ArrayIndexOutOfBoundsException e){
-
+            } catch (ArrayIndexOutOfBoundsException ignored){
             }
         }
     }
@@ -39,7 +38,7 @@ public class RuntimeManager {
         if (commandManager.getCommands().get(userCommand[0]) != null) {
             commandManager.execute(userCommand[0], args);
         } else {
-            console.printError("Такой команды нет!( Попробуйте еще раз.");
+            console.printError("Такой команды нет!( Попробуйте еще раз!)).");
         }
     }
 }
