@@ -1,6 +1,7 @@
 package objects.forms;
 
 import commandManagement.*;
+import managers.CollectionManager;
 import objects.*;
 
 import java.time.ZonedDateTime;
@@ -8,18 +9,19 @@ import java.util.Objects;
 
 public class PersonForm extends Form<Person>{
     private final Printable console;
-    private final UserInput scanner;
+    private final CollectionManager collectionManager;
 
-    public PersonForm(Printable console) {
+    public PersonForm(Printable console, CollectionManager collectionManager) {
         super(console);
         this.console = (Console.isFileMode()) ? new FileConsole() : console;
-        this.scanner = new ConsoleInput(); // добавить сканер с файлов
+        this.collectionManager = collectionManager;
     }
 
 
     @Override
     public Person build() {
         return new Person(
+                CollectionManager.getFreeId(),
                 askString("имя","", s -> s != null && !s.isBlank(),
                         " Имя не может быть пустым(("),
                 askCoordinates(),

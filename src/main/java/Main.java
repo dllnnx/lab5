@@ -1,9 +1,6 @@
 import commandManagement.commands.*;
-import managers.CollectionManager;
-import managers.CommandManager;
+import managers.*;
 import commandManagement.Console;
-import managers.FileManager;
-import managers.RuntimeManager;
 
 import java.util.List;
 
@@ -14,6 +11,7 @@ public class Main {
         CommandManager commandManager = new CommandManager();
         CollectionManager collectionManager = new CollectionManager();
         FileManager fileManager = new FileManager(console,collectionManager);
+        ScriptManager scriptManager = new ScriptManager();
 
         commandManager.addCommands(List.of(
                 new HelpCommand(console, commandManager),
@@ -30,7 +28,8 @@ public class Main {
                 new MaxByNationalityCommand(console, collectionManager),
                 new ShuffleCommand(console, collectionManager),
                 new HistoryCommand(console, commandManager),
-                new SaveCommand(fileManager, console)
+                new SaveCommand(fileManager, console),
+                new ExecuteScriptCommand(console, commandManager, scriptManager)
         ));
         new RuntimeManager(console, commandManager, fileManager).interactiveMode();
     }

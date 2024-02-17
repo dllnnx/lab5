@@ -10,7 +10,7 @@ public class InfoCommand extends Command {
     private final Console console;
 
     public InfoCommand(Console console, CollectionManager collectionManager) {
-        super("info", ": вывести в стандартный поток вывода информацию о коллекции");
+        super("info", ": вывести в стандартный поток вывода информацию о коллекции.");
         this.collectionManager = collectionManager;
         this.console = console;
     }

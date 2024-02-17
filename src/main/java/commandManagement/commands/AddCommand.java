@@ -21,8 +21,7 @@ public class AddCommand extends Command {
     @Override
     public void execute(String[] args) {
         console.println(ConsoleColor.setConsoleColor("Создание элемента Person...", ConsoleColor.CYAN));
-        collectionManager.addElement(new PersonForm(console).build());
+        collectionManager.addElement(new PersonForm(console, collectionManager).build());
         console.println(ConsoleColor.setConsoleColor("Объект Person создан успешно!", ConsoleColor.GREEN));
-        // добавить обработку ошибок
     }
 }

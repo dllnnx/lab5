@@ -1,11 +1,13 @@
 package objects.forms;
 
-import commandManagement.Printable;
+import commandManagement.*;
+import managers.ScriptManager;
 import objects.Location;
 
 import java.util.Objects;
 
-public class LocationForm extends Form{
+public class LocationForm extends Form<Location>{
+
     public LocationForm(Printable console) {
         super(console);
     }

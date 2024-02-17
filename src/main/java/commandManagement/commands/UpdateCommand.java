@@ -30,7 +30,7 @@ public class UpdateCommand extends Command {
                     console.println(ConsoleColor.setConsoleColor(
                             "Обновление элемента Person, id = " + id + "...", ConsoleColor.CYAN));
                     collectionManager.removeById(id);
-                    collectionManager.addElement(new PersonForm(console).build(id));
+                    collectionManager.addElement(new PersonForm(console, collectionManager).build(id));
                     console.println(ConsoleColor.setConsoleColor(
                             "Элемент Person с id = " + id + " обновлен успешно!", ConsoleColor.GREEN));
                 }

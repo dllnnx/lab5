@@ -26,7 +26,7 @@ public class RuntimeManager {
                 this.launch(userCommand.split(" "));
                 commandManager.addToHistory(userCommand.split(" ")[0]);
             } catch (NoSuchElementException e){
-                console.printError("Ой, кажется, Вы ввели что-то не то... До свидания!");
+                console.printError("Конец ввода... До свидания!))");
                 System.exit(0);
             } catch (ArrayIndexOutOfBoundsException ignored){
             }
@@ -34,7 +34,7 @@ public class RuntimeManager {
     }
 
     public void launch(String[] userCommand){
-        if (userCommand[0].isEmpty()) return;
+        if (userCommand[0].isBlank()) return;
         String[] args = Arrays.copyOfRange(userCommand, 1, userCommand.length);
         if (commandManager.getCommands().get(userCommand[0]) != null) {
             commandManager.execute(userCommand[0], args);

@@ -14,19 +14,6 @@ public class Person implements Comparable<Person> {
     private Country nationality; //Поле может быть null
     private Location location; //Поле не может быть null
 
-    private static long nextId = 0;
-
-    public Person(String name, Coordinates coordinates, ZonedDateTime creationDate, Integer height, EyeColor eyeColor, HairColor hairColor, Country nationality, Location location) {
-        this.id = incNextId();
-        this.name = name;
-        this.coordinates = coordinates;
-        this.creationDate = creationDate;
-        this.height = height;
-        this.eyeColor = eyeColor;
-        this.hairColor = hairColor;
-        this.nationality = nationality;
-        this.location = location;
-    }
 
     public Person(long id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer height, EyeColor eyeColor, HairColor hairColor, Country nationality, Location location) {
         this.id = id;
@@ -38,10 +25,6 @@ public class Person implements Comparable<Person> {
         this.hairColor = hairColor;
         this.nationality = nationality;
         this.location = location;
-    }
-
-    private static long incNextId(){
-        return nextId++;
     }
 
     public long getId() {

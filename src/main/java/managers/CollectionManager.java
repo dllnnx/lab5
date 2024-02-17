@@ -10,7 +10,7 @@ import java.util.*;
  * Класс для работы с коллекцией
  */
 public class CollectionManager {
-    private final List<Person> collection = new LinkedList<>();
+    private static final List<Person> collection = new LinkedList<>();
     private final Date initializationTime = new Date();
 
     public List<Person> getCollection() {
@@ -27,6 +27,18 @@ public class CollectionManager {
 
     public Date getInitializationTime() {
         return initializationTime;
+    }
+
+
+    public static long getFreeId(){
+        ArrayList<Long> ids = new ArrayList<>();
+        for (Person person: collection){
+            ids.add(person.getId());
+        }
+        for (long i = 0; i < Collections.max(ids); i++){
+            if (!ids.contains(i)) return i;
+        }
+        return Collections.max(ids) + 1;
     }
 
     public void addElement(Person person){

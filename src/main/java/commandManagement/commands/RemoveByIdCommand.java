@@ -11,7 +11,7 @@ public class RemoveByIdCommand extends Command {
     private final CollectionManager collectionManager;
 
     public RemoveByIdCommand(Console console, CollectionManager collectionManager) {
-        super("remove_by_id", " id: удалить элемент из коллекции по его id");
+        super("remove_by_id", " id: удалить элемент из коллекции по его id.");
         this.console = console;
         this.collectionManager = collectionManager;
     }

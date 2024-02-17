@@ -1,0 +1,3 @@
+info
+execute_script script2.txt
+remove_by_id 1

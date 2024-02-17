@@ -1,6 +1,7 @@
 package objects.forms;
 
 import commandManagement.*;
+import managers.ScriptManager;
 
 import java.util.function.Predicate;
 
@@ -11,8 +12,9 @@ public abstract class Form<T> {
 
     public Form(Printable console) {
         this.console = (Console.isFileMode()) ? new FileConsole() : console;
-        this.scanner = new ConsoleInput(); // добавить сканер с файлов
+        this.scanner = (Console.isFileMode()) ? new ScriptManager() : new ConsoleInput();
     }
+
 
     public abstract T build();
 

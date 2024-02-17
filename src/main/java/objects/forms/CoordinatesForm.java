@@ -1,9 +1,10 @@
 package objects.forms;
 
-import commandManagement.Printable;
+import commandManagement.*;
+import managers.ScriptManager;
 import objects.Coordinates;
 
-public class CoordinatesForm extends Form{
+public class CoordinatesForm extends Form<Coordinates>{
     public CoordinatesForm(Printable console) {
         super(console);
     }
