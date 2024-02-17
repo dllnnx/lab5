@@ -3,5 +3,5 @@ package commandManagement;
 import exceptions.NoSuchIdException;
 
 public interface CommandInterface {
-    void execute(String[] args) throws NoSuchIdException;
+    void execute(String[] args);
 }
