@@ -32,6 +32,6 @@ public class Main {
                 new HistoryCommand(console, commandManager),
                 new SaveCommand(fileManager, console)
         ));
-        new RuntimeManager(console, commandManager).interactiveMode();
+        new RuntimeManager(console, commandManager, fileManager).interactiveMode();
     }
 }
