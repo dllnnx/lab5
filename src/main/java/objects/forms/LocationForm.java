@@ -16,7 +16,7 @@ public class LocationForm extends Form{
                 askFloat("координата X", "", Objects::nonNull, ""),
                 askFloat("координата Y", "", Objects::nonNull, ""),
                 askString("название локации", ". Длина строки не должна превышать 889",
-                        s -> s != null && s.toString().length() <= 889,
+                        s -> s.toString().length() <= 889,
                         " Длина строки не может быть больше 889((")
         );
     }

@@ -59,6 +59,29 @@ public class Person {
         return nationality;
     }
 
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public ZonedDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public EyeColor getEyeColor() {
+        return eyeColor;
+    }
+
+    public HairColor getHairColor() {
+        return hairColor;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public static long getNextId() {
+        return nextId;
+    }
 
     @Override
     public String toString() {

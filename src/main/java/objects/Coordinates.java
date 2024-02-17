@@ -9,6 +9,15 @@ public class Coordinates {
         this.y = y;
     }
 
+
+    public float getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
     @Override
     public String toString() {
         return "(" + x + ", " + y + ")";

@@ -1,7 +1,6 @@
 package managers;
 
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import commandManagement.Console;
@@ -11,7 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.time.ZonedDateTime;
 import java.util.*;
 
@@ -69,11 +67,21 @@ public class FileManager {
                 jsonText.append(scanner.nextLine());
             }
             Person[] people = gson.fromJson(jsonText.toString(), Person[].class);
+            Validator validator = new Validator();
             for (Person person: people){
-                collectionManager.addElement(person);
+                if (validator.validatePerson(person)) {
+                    collectionManager.addElement(person);
+                }
+                else {
+                    console.printError("Данные в файле невалидны! :((");
+                    System.exit(0);
+                }
             }
         } catch (FileNotFoundException e){
             console.printError("Такого файла не существует(((");
+        } catch (IllegalArgumentException e){
+            console.printError("Данные в файле невалидны! :((");
+            System.exit(0);
         }
     }
 }
