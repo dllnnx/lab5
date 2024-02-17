@@ -31,6 +31,7 @@ public class CollectionManager {
 
 
     public static long getFreeId(){
+        if (collection.isEmpty()) return 0;
         ArrayList<Long> ids = new ArrayList<>();
         for (Person person: collection){
             ids.add(person.getId());
