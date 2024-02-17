@@ -1,8 +1,9 @@
 package objects;
 
 import java.time.ZonedDateTime;
+import java.util.Comparator;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -79,9 +80,6 @@ public class Person {
         return location;
     }
 
-    public static long getNextId() {
-        return nextId;
-    }
 
     @Override
     public String toString() {
@@ -96,5 +94,11 @@ public class Person {
                 "nationality = " + nationality + ",\n" +
                 "location = " + location + "\n" +
                 "}";
+    }
+
+
+    @Override
+    public int compareTo(Person o) {
+        return this.name.compareTo(o.name);
     }
 }
