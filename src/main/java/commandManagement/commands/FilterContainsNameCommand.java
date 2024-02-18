@@ -6,6 +6,7 @@ import managers.CollectionManager;
 import objects.Person;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FilterContainsNameCommand extends Command {
     private final Console console;
@@ -25,7 +26,7 @@ public class FilterContainsNameCommand extends Command {
         } else if (collectionManager.getCollectionSize() == 0){
             console.printError("Коллекция пуста!");
         } else {
-            ArrayList<Person> people = collectionManager.filterContainsName(args[0]);
+            List<Person> people = collectionManager.filterContainsName(args[0]);
             console.println(people.toString());
         }
     }

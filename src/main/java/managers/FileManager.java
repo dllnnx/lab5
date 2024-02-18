@@ -25,7 +25,6 @@ public class FileManager {
                 public void write(JsonWriter out, ZonedDateTime value) throws IOException {
                     out.value(value.toString());
                 }
-
                 @Override
                 public ZonedDateTime read(JsonReader in) throws IOException {
                     return ZonedDateTime.parse(in.nextString());
@@ -56,7 +55,7 @@ public class FileManager {
     public void fillCollection(){
         String filePath = System.getProperty("file_path");
         if (filePath == null || filePath.isEmpty()){
-            console.printError("Путь к файлу должен находиться в переменной окружения file_path! :((");
+            console.printError("Путь к исходному файлу должен находиться в переменной окружения file_path! :((");
         }
         try {
             StringBuilder jsonText = new StringBuilder();
@@ -71,15 +70,13 @@ public class FileManager {
                     collectionManager.addElement(person);
                 }
                 else {
-                    console.printError("Данные в файле невалидны! :((");
-                    System.exit(0);
+                    console.printError("Данные в файле невалидны! Коллекция не заполнена :((");
                 }
             }
         } catch (FileNotFoundException e){
             console.printError("Такого файла не существует(((");
         } catch (IllegalArgumentException e){
-            console.printError("Данные в файле невалидны! :((");
-            System.exit(0);
+            console.printError("Данные в файле невалидны! Коллекция не заполнена :((");
         }
     }
 }

@@ -6,6 +6,9 @@ import lombok.Getter;
 import objects.Person;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Класс для работы с коллекцией
@@ -30,10 +33,7 @@ public class CollectionManager {
 
     public static long getFreeId(){
         if (collection.isEmpty()) return 0;
-        ArrayList<Long> ids = new ArrayList<>();
-        for (Person person: collection){
-            ids.add(person.getId());
-        }
+        List<Long> ids = collection.stream().map(Person::getId).collect(Collectors.toList());
         for (long i = 0; i < Collections.max(ids); i++){
             if (!ids.contains(i)) return i;
         }
@@ -46,12 +46,9 @@ public class CollectionManager {
 
 
     public Person getById(long id){
-        for (Person person : collection) {
-            if (person.getId() == id) {
-                return person;
-            }
-        }
-        throw new NoSuchIdException();
+        return collection.stream()
+                .filter(x -> x.getId() == id)
+                .findAny().get();
     }
 
     public void removeById(long id){
@@ -71,36 +68,21 @@ public class CollectionManager {
         collection.remove(firstPerson);
     }
 
-    public ArrayList<Person> getByHeight(int height){
-        ArrayList<Person> people = new ArrayList<>();
-        for (Person person: collection){
-            if (person.getHeight() == height){
-                people.add(person);
-            }
-        }
-        return people;
+    public List<Person> getByHeight(int height){
+        return collection.stream()
+                .filter(x -> x.getHeight() == height)
+                .collect(Collectors.toList());
     }
 
-    public ArrayList<Person> filterContainsName(String name){
-        ArrayList<Person> people = new ArrayList<>();
-        for (Person person: collection){
-            if (person.getName().contains(name)){
-                people.add(person);
-            }
-        }
-        return people;
+    public List<Person> filterContainsName(String name){
+        return collection.stream()
+                .filter(x -> x.getName().contains(name)).collect(Collectors.toList());
     }
 
     public Person maxByNationality(){
-        int maxNat = collection.get(0).getNationality().getThousandsOfArea();
-        Person maxPerson = collection.get(0);
-        for (Person person: collection){
-            if (person.getNationality().getThousandsOfArea() > maxNat){
-                maxNat = person.getNationality().getThousandsOfArea();
-                maxPerson = person;
-            }
-        }
-        return maxPerson;
+        return collection.stream().
+                max(Comparator.comparing(x -> x.getNationality().getThousandsOfArea()))
+                .get();
     }
 
     public void shuffle(String[] args){

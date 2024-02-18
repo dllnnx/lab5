@@ -3,6 +3,8 @@ package objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.format.DateTimeFormatter;
+
 @Getter
 @AllArgsConstructor
 public class Person implements Comparable<Person> {
@@ -23,7 +25,7 @@ public class Person implements Comparable<Person> {
                 "id = " + id + ",\n" +
                 "name = " + name + ",\n" +
                 "coordinates = " + coordinates + ",\n" +
-                "creation_date = " + creationDate + ",\n" +
+                "creation_date = " + creationDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss")) + ",\n" +
                 "height = " + height + ",\n" +
                 "eye_color = " + eyeColor + ",\n" +
                 "hair_color = " + hairColor + ",\n" +

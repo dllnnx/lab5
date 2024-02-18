@@ -6,6 +6,7 @@ import managers.CollectionManager;
 import objects.Person;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FilterByHeightCommand extends Command {
     private final Console console;
@@ -23,7 +24,7 @@ public class FilterByHeightCommand extends Command {
         try {
             if (collectionManager.getCollectionSize() != 0) {
                 int height = Integer.parseInt(args[0]);
-                ArrayList<Person> people = collectionManager.getByHeight(height);
+                List<Person> people = collectionManager.getByHeight(height);
                 if (!people.isEmpty()) {
                     console.println(people.toString());
                 } else {
