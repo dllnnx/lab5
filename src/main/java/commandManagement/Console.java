@@ -1,16 +1,14 @@
 package commandManagement;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Console implements Printable{
 
+    @Getter
+    @Setter
     private static boolean fileMode = false;
 
-    public static boolean isFileMode(){
-        return fileMode;
-    }
-
-    public static void setFileMode(boolean fileMode){
-        Console.fileMode = fileMode;
-    }
 
     @Override
     public void print(String s) {

@@ -41,5 +41,48 @@
 * Для ввода значений null использовать пустую строку. 
 * Поля с комментарием "Значение этого поля должно генерироваться автоматически" не должны вводиться пользователем вручную при добавлении. 
 
-![](/class_descr.png)
-![](/enum_classes.png)
+**Описание хранимых в коллекции классов:**
+```java
+public class Person {
+    private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private String name; //Поле не может быть null, Строка не может быть пустой
+    private Coordinates coordinates; //Поле не может быть null
+    private java.time.ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private Integer height; //Поле не может быть null, Значение поля должно быть больше 0
+    private EyeColor eyeColor; //Поле не может быть null
+    private HairColor hairColor; //Поле не может быть null
+    private Country nationality; //Поле может быть null
+    private Location location; //Поле не может быть null
+}
+
+public class Coordinates {
+    private float x; //Максимальное значение поля: 737
+    private double y; //Максимальное значение поля: 113
+}
+
+public class Location {
+    private Float x; //Поле не может быть null
+    private Float y; //Поле не может быть null
+    private String name; //Длина строки не должна быть больше 889, Поле может быть null
+}
+
+public enum EyeColor {
+    GREEN,
+    YELLOW,
+    WHITE;
+}
+
+public enum HairColor {
+    GREEN,
+    BLACK,
+    ORANGE,
+    WHITE;
+}
+
+public enum Country{
+    RUSSIA,
+    UNITED_KINGDOM,
+    ITALY;
+}
+
+```

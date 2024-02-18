@@ -11,7 +11,7 @@ public enum ConsoleColor {
     CYAN("\u001B[36m"),
     GREY("\u001B[37m");
 
-    private String color;
+    private final String color;
 
     private ConsoleColor(String color){
         this.color = color;

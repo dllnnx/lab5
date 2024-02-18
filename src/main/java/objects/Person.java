@@ -1,8 +1,10 @@
 package objects;
 
-import java.time.ZonedDateTime;
-import java.util.Comparator;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
+@AllArgsConstructor
 public class Person implements Comparable<Person> {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -13,55 +15,6 @@ public class Person implements Comparable<Person> {
     private HairColor hairColor; //Поле не может быть null
     private Country nationality; //Поле может быть null
     private Location location; //Поле не может быть null
-
-
-    public Person(long id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer height, EyeColor eyeColor, HairColor hairColor, Country nationality, Location location) {
-        this.id = id;
-        this.name = name;
-        this.coordinates = coordinates;
-        this.creationDate = creationDate;
-        this.height = height;
-        this.eyeColor = eyeColor;
-        this.hairColor = hairColor;
-        this.nationality = nationality;
-        this.location = location;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public Integer getHeight() {
-        return height;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Country getNationality() {
-        return nationality;
-    }
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public ZonedDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public EyeColor getEyeColor() {
-        return eyeColor;
-    }
-
-    public HairColor getHairColor() {
-        return hairColor;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
 
 
     @Override

@@ -1,27 +1,15 @@
 package objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class Location {
     private Float x; //Поле не может быть null
     private Float y; //Поле не может быть null
     private String name; //Длина строки не должна быть больше 889, Поле может быть null
 
-    public Location(Float x, Float y, String name) {
-        this.x = x;
-        this.y = y;
-        this.name = name;
-    }
-
-    public Float getX() {
-        return x;
-    }
-
-    public Float getY() {
-        return y;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     @Override
     public String toString() {

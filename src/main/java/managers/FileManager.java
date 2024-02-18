@@ -4,6 +4,7 @@ import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import commandManagement.Console;
+import lombok.RequiredArgsConstructor;
 import objects.Person;
 
 import java.io.File;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.util.*;
 
+@RequiredArgsConstructor
 public class FileManager {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -31,10 +33,6 @@ public class FileManager {
             })
             .create();
 
-    public FileManager(Console console, CollectionManager collectionManager) {
-        this.console = console;
-        this.collectionManager = collectionManager;
-    }
 
     public void saveObjects(){
         String filePath = System.getProperty("file_path");

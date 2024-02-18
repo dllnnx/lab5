@@ -2,6 +2,7 @@ package managers;
 
 import exceptions.IllegalAmountOfArguments;
 import exceptions.NoSuchIdException;
+import lombok.Getter;
 import objects.Person;
 
 import java.util.*;
@@ -9,6 +10,7 @@ import java.util.*;
 /**
  * Класс для работы с коллекцией
  */
+@Getter
 public class CollectionManager {
     private static final List<Person> collection = new LinkedList<>();
     private final Date initializationTime = new Date();
@@ -23,10 +25,6 @@ public class CollectionManager {
 
     public int getCollectionSize(){
         return collection.size();
-    }
-
-    public Date getInitializationTime() {
-        return initializationTime;
     }
 
 

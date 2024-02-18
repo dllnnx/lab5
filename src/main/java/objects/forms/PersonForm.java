@@ -9,12 +9,10 @@ import java.util.Objects;
 
 public class PersonForm extends Form<Person>{
     private final Printable console;
-    private final CollectionManager collectionManager;
 
-    public PersonForm(Printable console, CollectionManager collectionManager) {
+    public PersonForm(Printable console) {
         super(console);
         this.console = (Console.isFileMode()) ? new FileConsole() : console;
-        this.collectionManager = collectionManager;
     }
 
 

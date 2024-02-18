@@ -1,21 +1,18 @@
 package managers;
 
 import commandManagement.Printable;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+@RequiredArgsConstructor
 public class RuntimeManager {
     private final Printable console;
     private final CommandManager commandManager;
     private final FileManager fileManager;
 
-    public RuntimeManager(Printable console, CommandManager commandManager, FileManager fileManager) {
-        this.console = console;
-        this.commandManager = commandManager;
-        this.fileManager = fileManager;
-    }
 
     public void interactiveMode(){
         Scanner userScanner = ScannerManager.getUserScanner();

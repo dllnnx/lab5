@@ -1,19 +1,15 @@
 package commandManagement;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.Objects;
 
+@AllArgsConstructor
 public abstract class Command implements CommandInterface {
+    @Getter
     private final String name;
     private final String description;
-
-    public Command(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public String getName() {
-        return name;
-    }
 
 
     @Override

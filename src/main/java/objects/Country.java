@@ -1,5 +1,8 @@
 package objects;
 
+import lombok.Getter;
+
+@Getter
 public enum Country{
     RUSSIA(17000),
     UNITED_KINGDOM(243),
@@ -11,7 +14,4 @@ public enum Country{
         this.thousandsOfArea = thousandsOfArea;
     }
 
-    public int getThousandsOfArea() {
-        return thousandsOfArea;
-    }
 }

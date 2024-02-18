@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class ScriptManager implements UserInput{
 
-    static Scanner fileReader;
     private static final ArrayDeque<String> pathQueue = new ArrayDeque<>();
     private static final ArrayDeque<Scanner> scanners = new ArrayDeque<>();
 
