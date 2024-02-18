@@ -21,15 +21,15 @@ public class HistoryCommand extends Command {
     public void execute(String[] args) throws NoSuchIdException {
         if (args.length != 0){
             console.printError("Для этой команды не требуются аргументы!");
-        } else{
-            List<String> history = commandManager.getCommandHistory();
-            if (!history.isEmpty()){
-                for (String command: history.subList(Math.max(0, history.size() - 10), history.size())){
-                    console.println(command);
-                }
-            } else{
-                console.println("Вы еще не ввели ни одной команды! :(((");
+            return;
+        }
+        List<String> history = commandManager.getCommandHistory();
+        if (!history.isEmpty()){
+            for (String command: history.subList(Math.max(0, history.size() - 10), history.size())){
+                console.println(command);
             }
+        } else {
+            console.println("Вы еще не ввели ни одной команды! :(((");
         }
     }
 }

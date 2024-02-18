@@ -19,11 +19,12 @@ public class InfoCommand extends Command {
     public void execute(String[] args) {
         if (args.length != 0){
             console.printError("Для этой команды не требуются аргументы!");
+            return;
         }
         console.println("Информация о коллекции: \n" +
                 "Тип коллекции: " + collectionManager.getCollectionType() + "\n" +
                 "Количество элементов: " + collectionManager.getCollectionSize() + "\n"  +
                 "Дата инициализации: " + collectionManager.getInitializationTime()
-                );
+        );
     }
 }

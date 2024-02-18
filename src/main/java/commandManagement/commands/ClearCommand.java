@@ -17,11 +17,16 @@ public class ClearCommand extends Command {
 
     @Override
     public void execute(String[] args) {
-        if (collectionManager.getCollectionSize() != 0) {
-            collectionManager.clearCollection();
-            console.println(ConsoleColor.setConsoleColor("Коллекция успешно очищена!", ConsoleColor.GREEN));
-        } else {
-            console.printError("Коллекция уже пуста!");
+        if (args.length != 0) {
+            console.printError("Для этой команды не требуются аргументы!");
+            return;
         }
+        if (collectionManager.getCollectionSize() == 0){
+            console.printError("Коллекция уже пуста!");
+            return;
+        }
+
+        collectionManager.clearCollection();
+        console.println(ConsoleColor.setConsoleColor("Коллекция успешно очищена!", ConsoleColor.GREEN));
     }
 }

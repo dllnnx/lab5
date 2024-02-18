@@ -17,12 +17,14 @@ public class RemoveFirstCommand extends Command {
 
     @Override
     public void execute(String[] args) {
-        if (collectionManager.getCollectionSize() != 0){
-            collectionManager.removeFirst();
-            console.println(ConsoleColor.setConsoleColor(
-                    "Первый элемент коллекции успешно удален!", ConsoleColor.GREEN));
-        } else{
-            console.printError("Коллекция пуста!");
-        }
+        if (args.length == 0) {
+            if (collectionManager.getCollectionSize() != 0) {
+                collectionManager.removeFirst();
+                console.println(ConsoleColor.setConsoleColor(
+                        "Первый элемент коллекции успешно удален!", ConsoleColor.GREEN));
+            } else {
+                console.printError("Коллекция пуста!");
+            }
+        } else console.printError("Для этой команды не требуются аргументы!");
     }
 }

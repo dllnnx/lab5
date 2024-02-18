@@ -16,11 +16,16 @@ public class MaxByNationalityCommand extends Command {
     }
 
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
-        if (collectionManager.getCollectionSize() != 0){
+    public void execute(String[] args){
+        if (args.length != 0){
+            console.printError("Для этой команды не требуются аргументы!");
+            return;
+        }
+
+        if (collectionManager.getCollectionSize() != 0) {
             console.println("Объект Person с максимальным значением поля nationality: ");
             console.println(collectionManager.maxByNationality().toString());
-        } else{
+        } else {
             console.printError("Коллекция пуста!");
         }
     }

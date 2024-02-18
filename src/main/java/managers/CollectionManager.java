@@ -6,9 +6,7 @@ import lombok.Getter;
 import objects.Person;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Класс для работы с коллекцией
@@ -48,14 +46,14 @@ public class CollectionManager {
     public Person getById(long id){
         return collection.stream()
                 .filter(x -> x.getId() == id)
-                .findAny().get();
+                .findAny().orElse(null);
     }
 
     public void removeById(long id){
-        try {
+        if (getById(id) != null){
             collection.remove(getById(id));
-        } catch (NoSuchIdException e){
-            System.out.println(e);
+        } else {
+            throw new NoSuchIdException();
         }
     }
 
@@ -80,13 +78,12 @@ public class CollectionManager {
     }
 
     public Person maxByNationality(){
-        return collection.stream().
-                max(Comparator.comparing(x -> x.getNationality().getThousandsOfArea()))
-                .get();
+        return collection.stream()
+                .max(Comparator.comparing(x -> x.getNationality().getThousandsOfArea()))
+                .orElse(null);
     }
 
-    public void shuffle(String[] args){
-        if (!(args.length == 0)) throw new IllegalAmountOfArguments();
+    public void shuffle(){
         Collections.shuffle(collection);
     }
 

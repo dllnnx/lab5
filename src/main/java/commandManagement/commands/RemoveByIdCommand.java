@@ -22,16 +22,15 @@ public class RemoveByIdCommand extends Command {
             if (args.length != 1) {
                 console.printError("Неверное количество аргументов! Введено: " + args.length +
                         ", ожидалось: 1.");
-            } else if (collectionManager.getCollectionSize() != 0) {
-                long id = Long.parseLong(args[0]);
-                if (collectionManager.getById(id) != null) {
-                    collectionManager.removeById(id);
-                    console.println(ConsoleColor.setConsoleColor(
-                            "Удаление элемента с id = " + id + " произошло успешно!", ConsoleColor.GREEN));
-                }
-            } else if (collectionManager.getCollectionSize() == 0 ){
-                console.printError("Коллекция пуста!");
+                return;
             }
+            if (collectionManager.getCollectionSize() != 0) {
+                long id = Long.parseLong(args[0]);
+                collectionManager.removeById(id);
+                console.println(ConsoleColor.setConsoleColor
+                        ("Удаление элемента с id = " + id + " произошло успешно!", ConsoleColor.GREEN));
+
+            } else console.printError("Коллекция пуста!");
         } catch (NoSuchIdException e){
             console.printError(e.toString());
         } catch (IllegalArgumentException e){

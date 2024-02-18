@@ -25,8 +25,12 @@ public class ExecuteScriptCommand extends Command{
     @Override
     public void execute(String[] args) {
         try {
-            if (args.length != 1) throw new IllegalAmountOfArguments();
-            else console.println(ConsoleColor.setConsoleColor("Путь получен успешно!", ConsoleColor.GREEN));
+            if (args.length != 1) {
+                console.printError("Неверное количество аргументов! Ожидалось: 1, введено: "
+                + args.length + ".");
+                return;
+            }
+            console.println(ConsoleColor.setConsoleColor("Путь получен успешно!", ConsoleColor.GREEN));
             String filePath = args[0];
 
             Console.setFileMode(true);
@@ -57,8 +61,6 @@ public class ExecuteScriptCommand extends Command{
             }
             ScriptManager.popFile();
 
-        } catch (IllegalAmountOfArguments e){
-            console.printError(e + " Ожидалось: 1, введено: " + args.length + ".");
         } catch (FileNotFoundException e) {
             console.printError("Такой файл не найден((");
         } catch (NoSuchElementException ignored){

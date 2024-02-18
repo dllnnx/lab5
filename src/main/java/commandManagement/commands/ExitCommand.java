@@ -15,6 +15,11 @@ public class ExitCommand extends Command {
 
     @Override
     public void execute(String[] args){
+        if (args.length != 0){
+            console.printError("Для этой команды не требуются аргументы!");
+            return;
+        }
+
         console.println(ConsoleColor.setConsoleColor("Программа завершена. До встречи!)))", ConsoleColor.PURPLE));
         System.exit(0);
     }

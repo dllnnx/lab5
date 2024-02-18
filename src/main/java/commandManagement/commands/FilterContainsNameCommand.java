@@ -22,12 +22,20 @@ public class FilterContainsNameCommand extends Command {
     @Override
     public void execute(String[] args) {
         if (args.length != 1){
-            console.printError("Неверное количество аргументов!");
-        } else if (collectionManager.getCollectionSize() == 0){
+            console.printError("Неверное количество аргументов! Ожидалось: 1, введено: " + args.length + ".");
+            return;
+        }
+
+        if (collectionManager.getCollectionSize() == 0){
             console.printError("Коллекция пуста!");
-        } else {
-            List<Person> people = collectionManager.filterContainsName(args[0]);
+            return;
+        }
+
+        List<Person> people = collectionManager.filterContainsName(args[0]);
+        if (!people.isEmpty()) {
             console.println(people.toString());
+        } else{
+            console.printError("Нет элементов, значение поля name которых содержит данную подстроку :((");
         }
     }
 }

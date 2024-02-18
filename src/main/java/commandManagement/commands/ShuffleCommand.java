@@ -21,11 +21,12 @@ public class ShuffleCommand extends Command {
     public void execute(String[] args){
         if (args.length != 0){
             console.printError("Для этой команды не требуются аргументы!");
+            return;
         }
+
         if (collectionManager.getCollectionSize() != 0) {
-            collectionManager.shuffle(args);
-            console.println(ConsoleColor.setConsoleColor(
-                    "Коллекция успешно перемешана!", ConsoleColor.GREEN));
+            collectionManager.shuffle();
+            console.println(ConsoleColor.setConsoleColor("Коллекция успешно перемешана!", ConsoleColor.GREEN));
         } else {
             console.printError("Коллекция пуста!");
         }

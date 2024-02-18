@@ -17,10 +17,8 @@ public class SaveCommand extends Command {
 
     @Override
     public void execute(String[] args) throws NoSuchIdException {
-        if (args.length != 0){
-            console.printError("Для этой команды не требуются аргументы!");
-        }else{
+        if (args.length == 0){
             fileManager.saveObjects();
-        }
+        } else console.printError("Для этой команды не требуются аргументы!");
     }
 }

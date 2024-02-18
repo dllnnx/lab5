@@ -22,17 +22,24 @@ public class FilterByHeightCommand extends Command {
     @Override
     public void execute(String[] args) {
         try {
-            if (collectionManager.getCollectionSize() != 0) {
-                int height = Integer.parseInt(args[0]);
-                List<Person> people = collectionManager.getByHeight(height);
-                if (!people.isEmpty()) {
-                    console.println(people.toString());
-                } else {
-                    console.printError("Нет людей с таким ростом в коллекции!");
-                }
-            } else {
-                console.printError("Коллекция пуста!");
+            if(args.length != 1){
+                console.printError("Неверное количество аргументов! Ожидалось: 1, введено: " + args.length + ".");
+                return;
             }
+            if (collectionManager.getCollectionSize() == 0){
+                console.printError("Коллекция пуста!");
+                return;
+            }
+
+
+            int height = Integer.parseInt(args[0]);
+            List<Person> people = collectionManager.getByHeight(height);
+            if (!people.isEmpty()) {
+                console.println(people.toString());
+            } else {
+                console.printError("Нет людей с таким ростом в коллекции!");
+            }
+
         } catch (IllegalArgumentException e){
             console.printError("Рост должен быть целочисленным!");
         }
