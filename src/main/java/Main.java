@@ -2,11 +2,13 @@ import commandManagement.commands.*;
 import managers.*;
 import commandManagement.Console;
 
+import java.io.File;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args){
-        System.setProperty("file_path", "C:\\Users\\alena\\IdeaProjects\\lab5\\data.json");
+//        System.setProperty("file_path", "C:\\Users\\alena\\IdeaProjects\\lab5\\data.json");
+        System.setProperty("file_path", new File("data.json").getAbsolutePath());
         Console console = new Console();
         CommandManager commandManager = new CommandManager();
         CollectionManager collectionManager = new CollectionManager();
