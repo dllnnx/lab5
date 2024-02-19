@@ -7,6 +7,10 @@ import objects.Person;
 
 import java.util.Collection;
 
+/**
+ * Команда show. Выводит в стандартный поток вывода все элементы коллекции в строковом представлении.
+ * @author dllnnx
+ */
 public class ShowCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -18,6 +22,9 @@ public class ShowCommand extends Command {
     }
 
 
+    /**
+     * Выполнить команду
+     */
     @Override
     public void execute(String[] args) {
         if (args.length == 0){

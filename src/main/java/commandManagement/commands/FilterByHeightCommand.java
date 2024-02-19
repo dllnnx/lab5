@@ -5,9 +5,12 @@ import commandManagement.Console;
 import managers.CollectionManager;
 import objects.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Команда filter_by_height. Выводит элементы, значение поля height которых равно заданному.
+ * @author dllnnx
+ */
 public class FilterByHeightCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -19,6 +22,10 @@ public class FilterByHeightCommand extends Command {
     }
 
 
+    /**
+     * Выполнить команду
+     * @param args аргумент команды
+     */
     @Override
     public void execute(String[] args) {
         try {

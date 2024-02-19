@@ -5,6 +5,10 @@ import lombok.Getter;
 
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Класс человека.
+ * @author dllnnx
+ */
 @Getter
 @AllArgsConstructor
 public class Person implements Comparable<Person> {

@@ -3,6 +3,10 @@ package objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * Класс локации.
+ * @author dllnnx
+ */
 @Getter
 @AllArgsConstructor
 public class Location {

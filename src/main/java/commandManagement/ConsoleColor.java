@@ -1,5 +1,9 @@
 package commandManagement;
 
+/**
+ * Класс для присваивания цвета тексту в консоли.
+ * @author dllnnx
+ */
 public enum ConsoleColor {
     RESET("\u001B[0m"),
     BLACK("\u001B[30m"),
@@ -17,6 +21,11 @@ public enum ConsoleColor {
         this.color = color;
     }
 
+    /**
+     * Присваивает цвет тексту в консоли.
+     * @param msg Строка для вывода
+     * @param color Присваиваемый цвет
+     */
     public static String setConsoleColor(String msg, ConsoleColor color){
         return color + msg + ConsoleColor.RESET;
     }

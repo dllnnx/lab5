@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.util.*;
 
+/**
+ * Менеджер для работы с файлами.
+ * @author dllnnx
+ */
 @RequiredArgsConstructor
 public class FileManager {
     private final Console console;
@@ -33,6 +37,9 @@ public class FileManager {
             .create();
 
 
+    /**
+     * Сохраняет коллекцию в json файл.
+     */
     public void saveObjects(){
         String filePath = System.getProperty("file_path");
         if (filePath == null || filePath.isEmpty()){
@@ -52,6 +59,9 @@ public class FileManager {
         }
     }
 
+    /**
+     * Заполняет коллекцию при запуске программы.
+     */
     public void fillCollection(){
         String filePath = System.getProperty("file_path");
         if (filePath == null || filePath.isEmpty()){

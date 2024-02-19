@@ -7,6 +7,10 @@ import objects.*;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
+/**
+ * Класс для формирования объектов типа {@link Person}.
+ * @author dllnnx
+ */
 public class PersonForm extends Form<Person>{
     private final Printable console;
 
@@ -16,6 +20,10 @@ public class PersonForm extends Form<Person>{
     }
 
 
+    /**
+     * Собирает новый объект класса {@link Person}
+     * @return Объект класса {@link Person}
+     */
     @Override
     public Person build() {
         return new Person(

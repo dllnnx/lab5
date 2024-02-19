@@ -3,8 +3,11 @@ package commandManagement.commands;
 import commandManagement.Command;
 import commandManagement.Console;
 import commandManagement.ConsoleColor;
-import exceptions.NoSuchIdException;
 
+/**
+ * Команда exit. Завершает программу без сохранения в файл.
+ * @author dllnnx
+ */
 public class ExitCommand extends Command {
     private final Console console;
 
@@ -13,6 +16,9 @@ public class ExitCommand extends Command {
         this.console = console;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
     public void execute(String[] args){
         if (args.length != 0){

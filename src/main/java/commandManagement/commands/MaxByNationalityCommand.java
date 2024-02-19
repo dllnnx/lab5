@@ -2,9 +2,12 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
-import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 
+/**
+ * Команда max_by_nationality. Выводит любой элемент из коллекции, значение поля nationality которого является максимальным.
+ * @author dllnnx
+ */
 public class MaxByNationalityCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -15,6 +18,9 @@ public class MaxByNationalityCommand extends Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
     public void execute(String[] args){
         if (args.length != 0){

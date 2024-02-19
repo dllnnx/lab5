@@ -2,6 +2,10 @@ package objects;
 
 import lombok.Getter;
 
+/**
+ * Перечисление стран происхождения человека.
+ * @author dllnnx
+ */
 @Getter
 public enum Country{
     RUSSIA(17000),

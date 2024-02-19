@@ -1,14 +1,21 @@
 package objects.forms;
 
 import commandManagement.*;
-import managers.ScriptManager;
 import objects.Coordinates;
 
+/**
+ * Класс для формирования объекта класса {@link Coordinates}.
+ * @author dllnnx
+ */
 public class CoordinatesForm extends Form<Coordinates>{
     public CoordinatesForm(Printable console) {
         super(console);
     }
 
+    /**
+     * Собирает новый объект класса {@link Coordinates}
+     * @return Объект класса {@link Coordinates}
+     */
     @Override
     public Coordinates build() {
         return new Coordinates(

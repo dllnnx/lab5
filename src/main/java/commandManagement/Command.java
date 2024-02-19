@@ -5,6 +5,10 @@ import lombok.Getter;
 
 import java.util.Objects;
 
+/**
+ * Абстрактный класс для всех команд
+ * @author dllnnx
+ */
 @AllArgsConstructor
 public abstract class Command implements CommandInterface {
     @Getter

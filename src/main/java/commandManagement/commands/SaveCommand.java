@@ -5,6 +5,10 @@ import commandManagement.Console;
 import exceptions.NoSuchIdException;
 import managers.FileManager;
 
+/**
+ * Команда save. Сохраняет коллекцию в файл.
+ * @author dllnnx
+ */
 public class SaveCommand extends Command {
     private final FileManager fileManager;
     private final Console console;
@@ -15,8 +19,11 @@ public class SaveCommand extends Command {
         this.console = console;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
+    public void execute(String[] args){
         if (args.length == 0){
             fileManager.saveObjects();
         } else console.printError("Для этой команды не требуются аргументы!");

@@ -3,6 +3,10 @@ package objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * Класс координат.
+ * @author dllnnx
+ */
 @Getter
 @AllArgsConstructor
 public class Coordinates {

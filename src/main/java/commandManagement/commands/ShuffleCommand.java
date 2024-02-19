@@ -3,10 +3,12 @@ package commandManagement.commands;
 import commandManagement.Command;
 import commandManagement.Console;
 import commandManagement.ConsoleColor;
-import exceptions.IllegalAmountOfArguments;
-import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 
+/**
+ * Команда shuffle. Перемешивает элементы коллекции в случайном порядке.
+ * @author dllnnx
+ */
 public class ShuffleCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -17,6 +19,9 @@ public class ShuffleCommand extends Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
     public void execute(String[] args){
         if (args.length != 0){

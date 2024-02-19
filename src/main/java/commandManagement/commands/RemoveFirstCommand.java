@@ -5,6 +5,10 @@ import commandManagement.Console;
 import commandManagement.ConsoleColor;
 import managers.CollectionManager;
 
+/**
+ * Команда remove_first. Удаляет первый элемент из коллекции.
+ * @author dllnnx
+ */
 public class RemoveFirstCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -15,6 +19,9 @@ public class RemoveFirstCommand extends Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
     public void execute(String[] args) {
         if (args.length == 0) {

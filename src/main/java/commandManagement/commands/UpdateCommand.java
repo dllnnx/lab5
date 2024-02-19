@@ -3,10 +3,13 @@ package commandManagement.commands;
 import commandManagement.Command;
 import commandManagement.Console;
 import commandManagement.ConsoleColor;
-import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 import objects.forms.PersonForm;
 
+/**
+ * Команда update. Обновляет значение элемента коллекции, id которого равен заданному.
+ * @author dllnnx
+ */
 public class UpdateCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -18,6 +21,10 @@ public class UpdateCommand extends Command {
     }
 
 
+    /**
+     * Выполнить команду
+     * @param args аргумент команды
+     */
     @Override
     public void execute(String[] args){
         try {

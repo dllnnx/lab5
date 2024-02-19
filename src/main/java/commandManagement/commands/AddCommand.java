@@ -7,7 +7,8 @@ import managers.CollectionManager;
 import objects.forms.PersonForm;
 
 /**
- * Команда add {element}: добавить новый элемент в коллекцию
+ * Команда add {element}. Добавляет новый элемент в коллекцию.
+ * @author dllnnx
  */
 public class AddCommand extends Command {
     private final Console console;
@@ -18,6 +19,10 @@ public class AddCommand extends Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполнить команду
+     * @param args аргументы команды
+     */
     @Override
     public void execute(String[] args) {
         console.println(ConsoleColor.setConsoleColor("Создание элемента Person...", ConsoleColor.CYAN));

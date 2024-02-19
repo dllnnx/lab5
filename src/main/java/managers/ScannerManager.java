@@ -5,7 +5,8 @@ import lombok.Getter;
 import java.util.Scanner;
 
 /**
- * Синглтон-класс для хранения сканера программы
+ * Класс для хранения стандартного сканера для программы.
+ * @author dllnnx
  */
 public class ScannerManager {
     @Getter

@@ -2,11 +2,14 @@ package commandManagement.commands;
 
 import commandManagement.Command;
 import commandManagement.Console;
-import exceptions.NoSuchIdException;
 import managers.CommandManager;
 
 import java.util.List;
 
+/**
+ * Команда history. Выводит последние 10 команд (без их аргументов).
+ * @author dllnnx
+ */
 public class HistoryCommand extends Command {
     private final Console console;
     private final CommandManager commandManager;
@@ -17,8 +20,11 @@ public class HistoryCommand extends Command {
         this.commandManager = commandManager;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
-    public void execute(String[] args) throws NoSuchIdException {
+    public void execute(String[] args){
         if (args.length != 0){
             console.printError("Для этой команды не требуются аргументы!");
             return;

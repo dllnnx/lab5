@@ -1,7 +1,6 @@
 package objects.forms;
 
 import commandManagement.*;
-import managers.ScriptManager;
 import objects.Location;
 
 import java.util.Objects;

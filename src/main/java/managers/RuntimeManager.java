@@ -7,6 +7,10 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Класс для обработки запуска программы.
+ * @author dllnnx
+ */
 @RequiredArgsConstructor
 public class RuntimeManager {
     private final Printable console;
@@ -14,6 +18,9 @@ public class RuntimeManager {
     private final FileManager fileManager;
 
 
+    /**
+     * Запускает работу программы в интерактивном режиме (в стандартной консоли).
+     */
     public void interactiveMode(){
         Scanner userScanner = ScannerManager.getUserScanner();
         fileManager.fillCollection();
@@ -29,6 +36,10 @@ public class RuntimeManager {
         }
     }
 
+    /**
+     * Запускает выполнение команды.
+     * @param userCommand Введенная пользователем команда с аргументами
+     */
     public void launch(String[] userCommand){
         if (userCommand[0].isBlank()) return;
         String[] args = Arrays.copyOfRange(userCommand, 1, userCommand.length);

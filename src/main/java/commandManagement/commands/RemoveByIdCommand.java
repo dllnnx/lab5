@@ -6,6 +6,10 @@ import commandManagement.ConsoleColor;
 import exceptions.NoSuchIdException;
 import managers.CollectionManager;
 
+/**
+ * Команда remove_by_id. Удаляет элемент из коллекции по его id.
+ * @author dllnnx
+ */
 public class RemoveByIdCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -16,6 +20,10 @@ public class RemoveByIdCommand extends Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполнить команду
+     * @param args аргумент команды
+     */
     @Override
     public void execute(String[] args) {
         try {

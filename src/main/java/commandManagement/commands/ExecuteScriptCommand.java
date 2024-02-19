@@ -1,7 +1,6 @@
 package commandManagement.commands;
 
 import commandManagement.*;
-import exceptions.IllegalAmountOfArguments;
 import managers.CommandManager;
 import managers.ScriptManager;
 
@@ -10,6 +9,10 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
+/**
+ * Команда execute_script. Считывает и исполняет скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.
+ * @author dllnnx
+ */
 public class ExecuteScriptCommand extends Command{
     private final Console console;
     private final CommandManager commandManager;
@@ -22,6 +25,10 @@ public class ExecuteScriptCommand extends Command{
         this.scriptManager = scriptManager;
     }
 
+    /**
+     * Выполнить команду
+     * @param args аргумент команды
+     */
     @Override
     public void execute(String[] args) {
         try {
@@ -59,7 +66,7 @@ public class ExecuteScriptCommand extends Command{
 
                 }
             }
-            ScriptManager.popFile();
+            ScriptManager.removeFile();
 
         } catch (FileNotFoundException e) {
             console.printError("Такой файл не найден((");

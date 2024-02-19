@@ -5,9 +5,12 @@ import commandManagement.Console;
 import managers.CollectionManager;
 import objects.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Команда filter_contains_name. Выводит элементы, значение поля name которых содержит заданную подстроку.
+ * @author dllnnx
+ */
 public class FilterContainsNameCommand extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
@@ -19,6 +22,10 @@ public class FilterContainsNameCommand extends Command {
     }
 
 
+    /**
+     * Выполнить команду
+     * @param args аргумент команды
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 1){

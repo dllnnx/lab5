@@ -4,7 +4,10 @@ import commandManagement.Command;
 import commandManagement.Console;
 import managers.CollectionManager;
 
-
+/**
+ * Команда info. Выводит в стандартный поток вывода информацию о коллекции.
+ * @author dllnnx
+ */
 public class InfoCommand extends Command {
     private final CollectionManager collectionManager;
     private final Console console;
@@ -15,6 +18,9 @@ public class InfoCommand extends Command {
         this.console = console;
     }
 
+    /**
+     * Выполнить команду
+     */
     @Override
     public void execute(String[] args) {
         if (args.length != 0){
